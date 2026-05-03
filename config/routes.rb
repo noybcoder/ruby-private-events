@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "users/show"
   devise_for :users
   get "events/index"
   get "events/create"
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "events#index"
+  resources :events
 end

@@ -1,2 +1,10 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<h1><%= @event.name %> - <%= @event.event_date.strftime("%B %d, %Y") %></h1>
+<div>By <%= @event.creator.email %></div>
+<div><%= @event.location %></div>
+<% if @event.fee == 0 %>
+    <div>Free</div>
+<% else %>
+    <div>$<%= @event.fee %></div>
+<% end %>
+<h3>Overview</h3>
+<p><%= @event.description %></p>

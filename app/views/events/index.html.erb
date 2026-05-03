@@ -1,2 +1,21 @@
 <h1>All Events</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<% if @events.any? %>
+    <% @events.each do |event| %>
+        <div>
+            <%= link_to event_path(event) do %>
+                <h3><%= event.name %></h3>
+            <% end %>
+        </div>
+        <div>
+            <%= event.event_date.strftime("%B %d, %Y") %>
+        </div>
+        <div>
+            <%= event.location %>
+        </div>
+        <div>
+            $<%= event.fee %>
+        </div>
+    <% end %>
+<% else %>
+    <p>No new events. <%= link_to "Let's create one now!", new_event_path  %></p>
+<% end %>
