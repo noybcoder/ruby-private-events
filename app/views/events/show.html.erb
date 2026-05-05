@@ -1,5 +1,5 @@
-<h1><%= @event.name %> - <%= @event.event_date.strftime("%B %d, %Y") %></h1>
-<div>By <%= @event.creator.email %></div>
+<h1><%= @event.name %> - <%= format_event_date(@event) %></h1>
+<div>By <%= link_to @event.creator.email, user_path(@event.creator) %></div>
 <div><%= @event.location %></div>
 <% if @event.fee == 0 %>
     <div>Free</div>

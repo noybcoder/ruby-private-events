@@ -1,0 +1,12 @@
+<h1>Events By <%= @user.email %></h1>
+<% if @user.events.any? %>
+    <% @user.events.each do |event| %>
+    <div>
+        <%= link_to event_path(event) do %>
+            <h2><%= event.name %></h2>
+        <% end %>
+        On <%= format_event_date(event) %> @ <%= event.location %>
+    </div>
+    <% end %>
+<% else %>
+<% end %>

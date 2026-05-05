@@ -7,7 +7,7 @@
             <% end %>
         </div>
         <div>
-            <%= event.event_date.strftime("%B %d, %Y") %>
+            <%= format_event_date(event) %>
         </div>
         <div>
             <%= event.location %>
